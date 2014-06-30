@@ -1,11 +1,13 @@
 <h1>Your Search Results:</h1>
 <h3><b><%= @yearSearched %></b> Year Students</h3>
-<% if @students.empty? %>
+<% if @returned_students.empty? %>
 	<p>Your search did not return any results.</p>
 <% else %>
-	<% @students.each do |student| %>
-		<%= student.fullName %>
+	<ul>
+	<% @returned_students.each do |student| %>
+		<li><%= student.fullName %> : <%= student.current_year %></li>
 	<% end %>
+	</ul>
 <% end %>
 <br>
 <hr>

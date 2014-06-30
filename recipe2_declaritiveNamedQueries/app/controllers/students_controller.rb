@@ -6,7 +6,7 @@ class StudentsController < ApplicationController
 	def search
 		if(params[:current_year])
 			@yearSearched = params[:current_year]
-			@students = Student.findByCurrentYear(@yearSearched)
+			@returned_students = Student.findByCurrentYear(params[:current_year])
 			render 'students/search_results'
 		else
 			render 'index'

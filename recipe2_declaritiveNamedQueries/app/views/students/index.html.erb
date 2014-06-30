@@ -6,7 +6,8 @@
 <% end %>
 
 <h1>All Students</h1>
-<% @students.each do |student| %>
-	<%= student.fullName %> : <%= student.current_year %>
-<% end %>
-
+<ul>
+	<% @students.each do |student| %>
+		<li><%= student.fullName %> : <%= student.current_year %></li>
+	<% end %>
+</uL>
