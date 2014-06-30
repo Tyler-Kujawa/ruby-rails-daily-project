@@ -1,0 +1,13 @@
+<h1>Your Search Results:</h1>
+<h3><b><%= @yearSearched %></b> Year Students</h3>
+<% if @students.empty? %>
+	<p>Your search did not return any results.</p>
+<% else %>
+	<% @students.each do |student| %>
+		<%= student.fullName %>
+	<% end %>
+<% end %>
+<br>
+<hr>
+
+<%= link_to('Back to index', students_path) %>

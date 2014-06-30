@@ -1,0 +1,12 @@
+<h1>Search by Year</h1>
+<hr>
+<%= form_tag(students_search_path, method: 'get', id: 'SearchForm') do %>
+ <%= text_field_tag :current_year, params[:current_year] %>
+ <%= submit_tag 'search' %>
+<% end %>
+
+<h1>All Students</h1>
+<% @students.each do |student| %>
+	<%= student.fullName %> : <%= student.current_year %>
+<% end %>
+
